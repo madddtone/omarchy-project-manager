@@ -1,0 +1,11 @@
+{
+  "name": "kalel-project-manager",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Omarchy shell plugin: a keyboard-driven project launcher.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test 'test/*.test.js'",
+    "validate": "omarchy plugin validate ."
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "defaultEditor": "omarchy",
+  "scale": 0,
+  "tasksInTerminal": true,
+  "terminal": {
+    "command": "xdg-terminal-exec",
+    "args": ["--dir={path}"]
+  },
+  "scan": {
+    "concurrency": 0,
+    "untracked": true,
+    "refreshMinutes": 10
+  },
+  "discovery": {
+    "enabled": true,
+    "roots": ["~/Projects", "~/Work", "~/dev"],
+    "maxDepth": 3,
+    "exclude": ["node_modules", ".git", ".venv", "venv", "__pycache__", "dist", "build", "target", "vendor", ".cache", ".next", ".turbo", "coverage"]
+  },
+  "editors": {
+    "omarchy": { "label": "Default editor", "command": "omarchy-launch-editor", "args": ["{path}"], "kind": "direct" },
+    "vscode": { "label": "VS Code", "command": "code", "args": ["{path}"], "kind": "gui" },
+    "zed": { "label": "Zed", "command": "zed", "args": ["{path}"], "kind": "gui" },
+    "cursor": { "label": "Cursor", "command": "cursor", "args": ["{path}"], "kind": "gui" },
+    "nvim": { "label": "Neovim", "command": "nvim", "args": ["{path}"], "kind": "terminal" },
+    "godot": { "label": "Godot", "command": "godot", "args": ["--path", "{path}", "--editor"], "kind": "gui" }
+  },
+  "actions": [
+    { "name": "Open in browser", "command": "omarchy-launch-browser file://{path}", "requires": "omarchy-launch-browser" }
+  ],
+  "templates": [],
+  "projects": [
+    {
+      "name": "kalel-project-manager",
+      "path": "~/Projects/kalel-project-manager",
+      "editor": "nvim",
+      "tags": ["omarchy", "qml"],
+      "pinned": true,
+      "tasks": {
+        "Test": "npm test",
+        "Validate": "omarchy plugin validate ."
+      }
+    }
+  ]
+}

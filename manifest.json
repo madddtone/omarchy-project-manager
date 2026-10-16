@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "kalel.project-manager",
+  "name": "Project Manager",
+  "version": "0.1.0",
+  "author": "kalel",
+  "license": "MIT",
+  "description": "A keyboard-driven project launcher: search your projects, open them in your editor, terminal, or file manager, with live git status, per-project tasks, scaffolding, and frecency ranking.",
+  "homepage": "https://github.com/madddtone/omarchy-project-manager",
+  "kinds": [
+    "service",
+    "overlay",
+    "bar-widget"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "service": "Service.qml",
+    "overlay": "Overlay.qml",
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Projects",
+    "description": "One bar icon that opens the project launcher.",
+    "category": "Productivity",
+    "aliases": ["projects", "project-manager", "repos", "workspaces"],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "barIcon": ""
+    },
+    "schema": [
+      { "key": "barIcon", "type": "string", "label": "Bar icon glyph", "defaultValue": "" }
+    ]
+  }
+}
